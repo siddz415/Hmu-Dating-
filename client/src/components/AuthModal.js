@@ -22,15 +22,17 @@ const handleSubmit = async (e) => {
             return
         } 
     // (For backend additions to work)
-    const response = await axios.post('http://localhost:8000/signup', { email, password})
+    const response = await axios.post(`http://localhost:8000/${isSignUp ?'signup' : 'login'}`, { email, password })
 
-    setCookie('Email', response.data.email)
-    setCookie('UserId', response.data.userId)
     setCookie('AuthToken', response.data.token)
+    setCookie('userId', response.data.userId)
 
     const success = response.status == 201
 
-    if (success) navigate('/onboarding')
+    // go to onboarding due to successful signing up
+    if (success && isSignUp) navigate('/onboarding')
+    // if succesful logging in and already signed up
+    if (success && !isSignUp) navigate('/dashboard')
 
 
     } catch (error) {
