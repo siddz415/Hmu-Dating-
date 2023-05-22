@@ -1,22 +1,35 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "package for node backend",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start:backend": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Team",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^4.0.1",
-    "express": "^4.17.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^7.0.2"
+    "mongodb": "^5.5.0",
+    "mongoose": "^7.0.2",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
-  }
+    "nodemon": "^2.0.22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siddz415/Hmu-Dating-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/siddz415/Hmu-Dating-/issues"
+  },
+  "homepage": "https://github.com/siddz415/Hmu-Dating-#readme"
 }
